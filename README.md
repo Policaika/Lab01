@@ -110,7 +110,8 @@ boost_1_69_0.tar.gz                      100%[==================================
 ```
 <details>
 <summary>Tap to check console output</summary>
-```zsh
+
+````zsh
 ./doc/html/boost_asio/net_ts.html
 ./doc/html/boost_asio/index.html
 ./doc/html/boost_asio/example/cpp03/timeouts/blocking_tcp_client.cpp
@@ -1874,7 +1875,7 @@ boost_1_69_0.tar.gz                      100%[==================================
 ./boost/beast/http/string_body.hpp
 ./boost/beast/http/type_traits.hpp
 ./boost/log/sinks/syslog_backend.hpp
-```
+````
 </details>
 
 ### 8) Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
@@ -1909,7 +1910,8 @@ Further information:
 ```
 <details>
 <summary>Tap to check console output</summary>
-```
+
+````
 Performing configuration checks
 
     - default address-model    : 64-bit (cached)
@@ -5601,7 +5603,8 @@ In file included from /usr/include/pthread.h:33,
 ...skipped <pstage/lib>libboost_wave.so for lack of <pstage/lib>libboost_wave.so.1.69.0...
 ...failed updating 68 targets...
 ...skipped 327 targets...
-```
+
+````
 </details>
 
 ### 9) Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
