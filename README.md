@@ -109,7 +109,7 @@ boost_1_69_0.tar.gz                      100%[==================================
 └─$ grep -rl "boost::asio" . > ~/Рабочий\ стол/txtfile 
 ```
 <details>
-<summary>Tap to check console output<summary>
+<summary>Tap to check console output</summary>
 ```zsh
 ./doc/html/boost_asio/net_ts.html
 ./doc/html/boost_asio/index.html
@@ -1908,7 +1908,7 @@ Further information:
 └─$ ./b2 --link=static &> ~/Рабочий\ стол/output 
 ```
 <details>
-<summary>Tap to check console output<summary>
+<summary>Tap to check console output</summary>
 ```
 Performing configuration checks
 
