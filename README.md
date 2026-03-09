@@ -108,6 +108,8 @@ boost_1_69_0.tar.gz                      100%[==================================
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ grep -rl "boost::asio" . > ~/Рабочий\ стол/txtfile 
 ```
+<details>
+<summary>Tap to check console output<summary>
 ```zsh
 ./doc/html/boost_asio/net_ts.html
 ./doc/html/boost_asio/index.html
@@ -1873,6 +1875,7 @@ boost_1_69_0.tar.gz                      100%[==================================
 ./boost/beast/http/type_traits.hpp
 ./boost/log/sinks/syslog_backend.hpp
 ```
+</details>
 
 ### 8) Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
 ```zsh
@@ -1904,6 +1907,8 @@ Further information:
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ ./b2 --link=static &> ~/Рабочий\ стол/output 
 ```
+<details>
+<summary>Tap to check console output<summary>
 ```
 Performing configuration checks
 
@@ -5597,6 +5602,7 @@ In file included from /usr/include/pthread.h:33,
 ...failed updating 68 targets...
 ...skipped 327 targets...
 ```
+</details>
 
 ### 9) Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
 ```zsh
