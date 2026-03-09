@@ -1,6 +1,6 @@
 ## Лабораторная работа №1
 
-## Для создания файла использовалась данная конструкция:
+### Для создания файла использовалась данная конструкция:
 ```zsh
 ┌──(p㉿Policai)-[~]
 └─$ cat >lab01 << 'EOF'                
@@ -23,8 +23,8 @@ EOF
 
 Далее редактируем файл при помощи nano, т.к для меня он показался наиболее удобным.
 
-1) Скачайте библиотеку boost с помощью утилиты wget. Адрес для скачивания https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz.
-
+### 1) Скачайте библиотеку boost с помощью утилиты wget. Адрес для скачивания https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz.
+```zsh
 ┌──(p㉿Policai)-[~/Рабочий стол/Policaika/workspace/tasks]
 └─$ wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
 --2026-03-01 16:27:13--  https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
@@ -55,34 +55,34 @@ HTTP-запрос отправлен. Ожидание ответа… 200 OK
 boost_1_69_0.tar.gz                      100%[================================================================================>] 106,53M  4,09MB/s    за 27s     
 
 2026-03-01 16:27:42 (3,93 MB/s) - «boost_1_69_0.tar.gz» сохранён [111710205/111710205]
+```
 
-
-2) Разархивируйте скаченный файл в директорию ~/boost_1_69_0
-
+### 2) Разархивируйте скаченный файл в директорию ~/boost_1_69_0
+```zsh
 ┌──(p㉿Policai)-[~/Рабочий стол/Policaika/workspace/tasks]
 └─$ tar -xf boost_1_69_0.tar.gz -C ~/            
                                                                                                                                                                   
 ┌──(p㉿Policai)-[~/Рабочий стол/Policaika/workspace/tasks]
 └─$ ls ~/
  Applications   boost_1_69_0   Qt   Test   Видео   Документы   Загрузки   Изображения   Музыка   Общедоступные  'Рабочий стол'   Шаблоны
-
+```
                                                                                                                                           
-3) Подсчитайте количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
-
+### 3) Подсчитайте количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
+```zsh
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ find . -maxdepth 1 -type f | wc -l
 12
+```
 
-
-4) Подсчитайте количество файлов в директории ~/boost_1_69_0 включая вложенные директории.
-
+### 4) Подсчитайте количество файлов в директории ~/boost_1_69_0 включая вложенные директории.
+```zsh
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ find . -type f | wc -l            
 61191
+```
 
-
-5) Подсчитайте количество заголовочных файлов, файлов с расширением .cpp, сколько остальных файлов (не заголовочных и не .cpp).
-
+### 5) Подсчитайте количество заголовочных файлов, файлов с расширением .cpp, сколько остальных файлов (не заголовочных и не .cpp).
+```zsh
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ find . -type f \( -name "*.h" -o -name "*.hpp" \) | wc -l
 15208
@@ -94,20 +94,21 @@ boost_1_69_0.tar.gz                      100%[==================================
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ find . -type f ! -name "*.h" ! -name "*.hpp" ! -name "*.cpp" | wc -l
 32209
+```
 
-
-6) Найдите полный пусть до файла any.hpp внутри библиотеки boost.
-
+### 6) Найдите полный пусть до файла any.hpp внутри библиотеки boost.
+```zsh
 ┌──(p㉿Policai)-[/]
 └─$ find ~/boost_1_69_0 -type f -path "*/boost/any.hpp"
 /home/p/boost_1_69_0/boost/any.hpp
+```
 
-
-7) Выведите в консоль все файлы, где упоминается последовательность boost::asio.
-
+### 7) Выведите в консоль все файлы, где упоминается последовательность boost::asio.
+```zsh
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ grep -rl "boost::asio" . > ~/Рабочий\ стол/txtfile 
-
+```
+```zsh
 ./doc/html/boost_asio/net_ts.html
 ./doc/html/boost_asio/index.html
 ./doc/html/boost_asio/example/cpp03/timeouts/blocking_tcp_client.cpp
@@ -1871,10 +1872,10 @@ boost_1_69_0.tar.gz                      100%[==================================
 ./boost/beast/http/string_body.hpp
 ./boost/beast/http/type_traits.hpp
 ./boost/log/sinks/syslog_backend.hpp
+```
 
-
-8) Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
-
+### 8) Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
+```zsh
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ ./bootstrap.sh                         
 Building Boost.Build engine with toolset gcc... tools/build/src/engine/bin.linuxx86_64/b2
@@ -1898,10 +1899,12 @@ Further information:
      
    - Boost.Build documentation:
      http://www.boost.org/build/doc/html/index.html
-
+```
+```zsh
 ┌──(p㉿Policai)-[~/boost_1_69_0]
 └─$ ./b2 --link=static &> ~/Рабочий\ стол/output 
-
+```
+```
 Performing configuration checks
 
     - default address-model    : 64-bit (cached)
@@ -5593,13 +5596,14 @@ In file included from /usr/include/pthread.h:33,
 ...skipped <pstage/lib>libboost_wave.so for lack of <pstage/lib>libboost_wave.so.1.69.0...
 ...failed updating 68 targets...
 ...skipped 327 targets...
+```
 
-
-9) Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
-
+### 9) Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
+```zsh
 ┌──(p㉿Policai)-[~]
 └─$ mv ~/boost_1_69_0/stage/lib/*.a ~/boost-libs 
-                                                                                                                                                                  
+```
+```zsh                                                                                                                                                                  
 ┌──(p㉿Policai)-[~]
 └─$ ls boost-libs 
 libboost_atomic.a     libboost_exception.a   libboost_prg_exec_monitor.a      libboost_stacktrace_backtrace.a  libboost_unit_test_framework.a
@@ -5608,10 +5612,10 @@ libboost_container.a  libboost_filesystem.a  libboost_random.a                li
 libboost_context.a    libboost_graph.a       libboost_regex.a                 libboost_system.a
 libboost_contract.a   libboost_iostreams.a   libboost_serialization.a         libboost_test_exec_monitor.a
 libboost_date_time.a  libboost_locale.a      libboost_stacktrace_addr2line.a  libboost_timer.a
+```
 
-
-10) Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
-
+### 10) Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
+```zsh
 ┌──(p㉿Policai)-[~]
 └─$ alias
 diff='diff --color=auto'
@@ -5687,10 +5691,10 @@ which-command=whence
 -rw-rw-r-- 1 p p 2,2M мар  1 20:43 libboost_unit_test_framework.a
 -rw-rw-r-- 1 p p 4,5M мар  1 20:43 libboost_wave.a
 -rw-rw-r-- 1 p p 768K мар  1 20:42 libboost_wserialization.a
+```
 
-
-11) Найдите топ10 самых "тяжёлых".
-
+### 11) Найдите топ10 самых "тяжёлых".
+```zsh
 ┌──(p㉿Policai)-[~]
 └─$ ls -lhS boost-libs/ | head -10
 итого 20M
@@ -5703,3 +5707,4 @@ which-command=whence
 -rw-rw-r-- 1 p p 1,2M мар  1 20:42 libboost_serialization.a
 -rw-rw-r-- 1 p p 815K мар  1 20:51 libboost_graph.a
 -rw-rw-r-- 1 p p 768K мар  1 20:42 libboost_wserialization.a
+```
