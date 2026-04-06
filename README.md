@@ -1879,20 +1879,47 @@ boost_1_69_0.tar.gz                      100%[==================================
 </details>
 
 ### 8) Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
+
 ```zsh
-┌──(p㉿Policai)-[~/boost_1_69_0]
-└─$ ./bootstrap.sh                         
-Building Boost.Build engine with toolset gcc... tools/build/src/engine/bin.linuxx86_64/b2
+┌──(p㉿Policai)-[~/boost_1_90_0]
+└─$ ./bootstrap.sh
+Building B2 engine..
+
+###
+###
+### Using 'gcc' toolset.
+###
+###
+
+g++ (Debian 15.2.0-12) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+###
+###
+
+> g++ -x c++ -std=c++11 -pthread -O2 -s -DNDEBUG bindjam.cpp builtins.cpp class.cpp command.cpp compile.cpp constants.cpp cwd.cpp debug.cpp debugger.cpp events.cpp execcmd.cpp execnt.cpp execunix.cpp filent.cpp filesys.cpp fileunix.cpp frames.cpp function.cpp glob.cpp hash.cpp hcache.cpp hdrmacro.cpp headers.cpp jam_strings.cpp jam.cpp jamgram.cpp lists.cpp make.cpp make1.cpp md5.cpp mem.cpp modules.cpp native.cpp output.cpp parse.cpp pathnt.cpp pathsys.cpp pathunix.cpp regexp.cpp rules.cpp scan.cpp search.cpp startup.cpp tasks.cpp timestamp.cpp value.cpp variable.cpp w32_getreg.cpp mod_args.cpp mod_command_db.cpp mod_db.cpp mod_jam_builtin.cpp mod_jam_class.cpp mod_jam_errors.cpp mod_jam_modules.cpp mod_order.cpp mod_path.cpp mod_property_set.cpp mod_regex.cpp mod_sequence.cpp mod_set.cpp mod_string.cpp mod_summary.cpp mod_sysinfo.cpp mod_version.cpp -o b2
+tools/build/src/engine/b2
 Detecting Python version... 3.13
 Detecting Python root... /usr
 Unicode/ICU support for Boost.Regex?... not found.
-Generating Boost.Build configuration in project-config.jam...
+Backing up existing B2 configuration in project-config.jam.1
+Generating B2 configuration in project-config.jam for gcc...
 
 Bootstrapping is done. To build, run:
 
     ./b2
     
-To adjust configuration, edit 'project-config.jam'.
+To generate header files, run:
+
+    ./b2 headers
+
+The configuration generated uses gcc to build by default. If that is
+unintended either use the --with-toolset option or adjust configuration, by
+editing 'project-config.jam'.
+
 Further information:
 
    - Command line help:
@@ -1901,8 +1928,9 @@ Further information:
    - Getting started guide: 
      http://www.boost.org/more/getting_started/unix-variants.html
      
-   - Boost.Build documentation:
-     http://www.boost.org/build/doc/html/index.html
+   - B2 documentation:
+     http://www.boost.org/build/
+
 ```
 ```zsh
 ┌──(p㉿Policai)-[~/boost_1_69_0]
