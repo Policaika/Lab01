@@ -1,3 +1,4 @@
+````zsh
 Performing configuration checks
 
     - default address-model    : 64-bit (cached) [1]
@@ -1741,3 +1742,4 @@ The following directory should be added to linker library paths:
 
     /home/p/boost_1_90_0/stage/lib
 
+````
